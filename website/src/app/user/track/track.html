@@ -1,0 +1,401 @@
+<div class="track-page">
+
+  <!-- =====================================
+       PAGE HEADER
+  ====================================== -->
+
+  <div class="page-header">
+
+    <div class="page-header-content">
+
+      <span class="page-label">
+        Complaint Portal
+      </span>
+
+      <h1>Track Complaint</h1>
+
+      <p>
+        Check the current status and progress of your submitted complaint.
+      </p>
+
+    </div>
+
+    <div class="page-header-icon">
+      <i class="bi bi-geo-alt"></i>
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       SEARCH COMPLAINT
+  ====================================== -->
+
+  <div class="search-card">
+
+    <div class="search-content">
+
+      <div class="search-icon">
+        <i class="bi bi-search"></i>
+      </div>
+
+      <div class="search-text">
+
+        <h2>Find Your Complaint</h2>
+
+        <p>
+          Enter your complaint ID to view its latest status.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="search-box">
+
+      <div class="search-input">
+
+        <i class="bi bi-hash"></i>
+
+        <input
+          type="text"
+          name="complaintId"
+          [(ngModel)]="id"
+          placeholder="Enter Complaint ID e.g. CMP-2026-00124"
+        >
+
+      </div>
+
+      <button class="track-btn" type="button" (click)="load()" [disabled]="loading">
+
+        <i class="bi bi-search"></i>
+
+        Track Complaint
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       COMPLAINT RESULT
+  ====================================== -->
+
+    <p *ngIf="loading">Loading complaint status…</p>
+    <p *ngIf="error" class="form-error" role="alert">{{ error }}</p>
+    <div class="complaint-result" *ngIf="item">
+
+
+    <!-- =================================
+         COMPLAINT OVERVIEW
+    ================================== -->
+
+    <div class="overview-card">
+
+      <div class="overview-left">
+
+        <div class="complaint-category-icon">
+          <i class="bi bi-lightning-charge"></i>
+        </div>
+
+        <div>
+
+          <span class="small-label">
+            Complaint ID
+          </span>
+
+          <h2>{{ item.complaintId }}</h2>
+
+          <p>
+            {{ item.subject }}
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        {{ item.status }}
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         MAIN TRACKING LAYOUT
+    ================================== -->
+
+    <div class="tracking-layout">
+
+
+      <!-- =================================
+           LEFT - TIMELINE
+      ================================== -->
+
+      <div class="timeline-card">
+
+        <div class="card-heading">
+
+          <div>
+
+            <span>Complaint Progress</span>
+
+            <h2>Track Your Complaint</h2>
+
+          </div>
+
+          <i class="bi bi-clock-history"></i>
+
+        </div>
+
+
+        <div class="timeline">
+          <div class="timeline-item completed">
+            <div class="timeline-marker"><i class="bi bi-check"></i></div>
+            <div class="timeline-content"><h3>Complaint Submitted</h3><p>{{ item.subject }} was submitted for {{ item.category }}.</p><span>{{ item.createdAt | date:"medium" }}</span></div>
+          </div>
+          <div class="timeline-item active">
+            <div class="timeline-marker"><i class="bi bi-arrow-repeat"></i></div>
+            <div class="timeline-content"><h3>{{ item.status }}</h3><p>{{ item.resolution || "This is the latest recorded complaint status." }}</p><span>Last updated {{ item.updatedAt | date:"medium" }}</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- =================================
+           RIGHT - DETAILS
+      ================================== -->
+
+      <div class="details-column">
+
+
+        <!-- Complaint Details -->
+
+        <div class="details-card">
+
+          <div class="card-heading">
+
+            <div>
+
+              <span>Information</span>
+
+              <h2>Complaint Details</h2>
+
+            </div>
+
+            <i class="bi bi-file-earmark-text"></i>
+
+          </div>
+
+
+          <div class="detail-list">
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-grid"></i>
+              </div>
+
+              <div>
+
+                <span>Category</span>
+
+                <strong>{{ item.category }}</strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+
+              <div>
+
+                <span>Location</span>
+
+                <strong>{{ item.location }}</strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-flag"></i>
+              </div>
+
+              <div>
+
+                <span>Priority</span>
+
+                <strong class="high-priority">
+                  {{ item.priority }}
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-person"></i>
+              </div>
+
+              <div>
+
+                <span>Current Status</span>
+
+                <strong>
+                  {{ item.status }}
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-calendar3"></i>
+              </div>
+
+              <div>
+
+                <span>Submitted On</span>
+
+                <strong>
+                  {{ item.createdAt | date:'mediumDate' }}
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="detail-row">
+
+              <div class="detail-icon">
+                <i class="bi bi-arrow-repeat"></i>
+              </div>
+
+              <div>
+
+                <span>Last Updated</span>
+
+                <strong>
+                  {{ item.updatedAt | date:'medium' }}
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Description -->
+
+        <div class="description-card">
+
+          <div class="card-heading">
+
+            <div>
+
+              <span>Issue</span>
+
+              <h2>Description</h2>
+
+            </div>
+
+            <i class="bi bi-chat-left-text"></i>
+
+          </div>
+
+          <p>{{ item.description }}</p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         ATTACHMENT
+    ================================== -->
+
+    <div class="attachment-card" *ngIf="item.attachments?.length">
+
+      <div class="card-heading">
+
+        <div>
+
+          <span>Evidence</span>
+
+          <h2>Attached Image</h2>
+
+        </div>
+
+        <i class="bi bi-image"></i>
+
+      </div>
+
+
+      <div class="attachment-content" *ngFor="let file of item.attachments">
+        <div class="attachment-placeholder"><i class="bi bi-image"></i><span>{{ file.filename }}</span></div>
+        <div class="attachment-info"><h3>{{ file.filename }}</h3><p>Uploaded with the complaint</p><button type="button" class="view-image-btn" (click)="download(file.path)"><i class="bi bi-eye"></i> View Image</button></div>
+      </div>
+
+    </div>
+
+
+
+    <!-- =================================
+         ACTIONS
+    ================================== -->
+
+    <div class="tracking-actions">
+
+      <a
+        routerLink="/complaint"
+        class="secondary-action">
+
+        <i class="bi bi-arrow-left"></i>
+
+        Back to My Complaints
+
+      </a>
+
+
+      <button class="refresh-btn" type="button" (click)="load()" [disabled]="loading">
+
+        <i class="bi bi-arrow-clockwise"></i>
+
+        Refresh Status
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+</div>

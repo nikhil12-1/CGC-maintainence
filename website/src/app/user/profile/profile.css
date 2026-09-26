@@ -1,0 +1,803 @@
+/* =========================================
+   PROFILE PAGE
+========================================= */
+
+.profile-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  padding: 45px 6% 70px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(36, 91, 150, 0.11),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(242, 162, 27, 0.08),
+      transparent 30%
+    ),
+    #edf4fa;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #000000;
+}
+
+
+/* =========================================
+   BACKGROUND CIRCLES
+========================================= */
+
+.bg-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(2px);
+}
+
+.circle-one {
+  width: 320px;
+  height: 320px;
+
+  top: -130px;
+  left: -130px;
+
+  background: rgba(36, 91, 150, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.circle-two {
+  width: 370px;
+  height: 370px;
+
+  right: -160px;
+  bottom: -160px;
+
+  background: rgba(242, 162, 27, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.profile-container {
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.page-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 28px;
+}
+
+.page-label {
+  display: inline-block;
+
+  margin-bottom: 5px;
+
+  color: #245b96;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+.page-heading h1 {
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  color: #000000;
+}
+
+.page-heading p {
+  margin: 6px 0 0;
+
+  color: #666666;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   EDIT BUTTON
+========================================= */
+
+.edit-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(36, 91, 150, 0.15);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  color: #245b96;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s;
+}
+
+.edit-btn:hover {
+  background: #245b96;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(36, 91, 150, 0.16);
+}
+
+
+/* =========================================
+   GLASS CARD
+========================================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.52);
+
+  border: 1px solid rgba(255, 255, 255, 0.88);
+
+  border-radius: 22px;
+
+  backdrop-filter: blur(25px);
+
+  -webkit-backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 15px 40px rgba(33, 79, 130, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   PROFILE OVERVIEW
+========================================= */
+
+.profile-overview {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 30px 35px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-image-section {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 105px;
+  height: 105px;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background: #dfeaf3;
+
+  border: 4px solid rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 8px 25px rgba(36, 91, 150, 0.12);
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.change-photo-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #245b96;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.change-photo-btn i {
+  margin-right: 4px;
+}
+
+.change-photo-btn:hover {
+  color: #d88b00;
+}
+
+
+/* =========================================
+   PROFILE BASIC
+========================================= */
+
+.profile-basic {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.student-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 5px 10px;
+
+  margin-bottom: 8px;
+
+  border-radius: 20px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.profile-basic h2 {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #000000;
+}
+
+.student-id,
+.email {
+  margin: 3px 0;
+
+  color: #666666;
+
+  font-size: 12px;
+}
+
+.student-id i,
+.email i {
+  width: 20px;
+
+  color: #245b96;
+}
+
+
+/* =========================================
+   INFORMATION GRID
+========================================= */
+
+.information-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   INFORMATION CARD
+========================================= */
+
+.information-card {
+  padding: 27px 30px;
+}
+
+
+/* =========================================
+   CARD TITLE
+========================================= */
+
+.card-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 25px;
+}
+
+.title-icon {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 18px;
+}
+
+.card-title h3 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 16px;
+
+  font-weight: 650;
+}
+
+.card-title p {
+  margin: 3px 0 0;
+
+  color: #777777;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   DETAILS GRID
+========================================= */
+
+.details-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px 25px;
+}
+
+.detail-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.detail-item span {
+  color: #888888;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+.detail-item strong {
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings-card {
+  padding: 27px 30px;
+}
+
+.settings-card .card-title {
+  margin-bottom: 18px;
+}
+
+
+/* =========================================
+   SETTINGS LIST
+========================================= */
+
+.settings-list {
+  width: 100%;
+}
+
+.setting-item {
+  min-height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 13px 0;
+
+  border-top: 1px solid rgba(36, 91, 150, 0.08);
+}
+
+.setting-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.setting-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: rgba(36, 91, 150, 0.07);
+
+  color: #245b96;
+
+  font-size: 15px;
+}
+
+.setting-item h4 {
+  margin: 0 0 3px;
+
+  color: #111111;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.setting-item p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   SETTING BUTTON
+========================================= */
+
+.setting-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(36, 91, 150, 0.13);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  color: #245b96;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.setting-btn:hover {
+  background: #245b96;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   TOGGLE SWITCH
+========================================= */
+
+.switch {
+  position: relative;
+
+  width: 43px;
+  height: 23px;
+
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 30px;
+
+  background: #cbd6df;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 17px;
+  height: 17px;
+
+  left: 3px;
+  top: 3px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: #245b96;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-icon {
+  background: rgba(190, 60, 60, 0.08);
+
+  color: #b23b3b;
+}
+
+.logout-btn {
+  padding: 8px 15px;
+
+  border: 1px solid rgba(178, 59, 59, 0.18);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  color: #b23b3b;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background: #b23b3b;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .profile-page {
+    padding: 35px 4% 60px;
+  }
+
+  .information-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .profile-page {
+    padding: 30px 15px 50px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .page-heading h1 {
+    font-size: 26px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
+  }
+
+  .edit-btn {
+    padding: 10px 15px;
+  }
+
+  .profile-overview {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 28px 20px;
+  }
+
+  .profile-basic {
+    align-items: center;
+  }
+
+  .profile-basic h2 {
+    font-size: 22px;
+  }
+
+  .student-id,
+  .email {
+    font-size: 11px;
+  }
+
+  .information-card,
+  .settings-card {
+    padding: 23px 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .profile-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .profile-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .page-heading h1 {
+    font-size: 24px;
+  }
+
+  .card-title h3 {
+    font-size: 15px;
+  }
+
+  .setting-item {
+    align-items: flex-start;
+  }
+
+}

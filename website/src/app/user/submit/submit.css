@@ -1,0 +1,1130 @@
+/* =========================================
+   SUBMIT COMPLAINT PAGE
+========================================= */
+
+.complaint-page {
+  min-height: 100vh;
+
+  padding: 35px 5% 70px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(36, 91, 150, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(242, 162, 27, 0.06),
+      transparent 28%
+    ),
+    #edf4fa;
+
+  color: #000000;
+
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto 25px;
+
+  padding: 25px 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.50);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 8px 28px rgba(33, 79, 130, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* Small Label */
+
+.page-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #245b96;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+/* Page Title */
+
+.page-header h1 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+.page-header p {
+  max-width: 650px;
+
+  margin: 7px 0 0;
+
+  color: #444444;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* Header Icon */
+
+.header-icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 18px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.complaint-layout {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2.2fr)
+    minmax(280px, 0.8fr);
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.form-card {
+  padding: 30px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 10px 30px rgba(33, 79, 130, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================
+   FORM TITLE
+========================================= */
+
+.form-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 27px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid rgba(36, 91, 150, 0.10);
+}
+
+
+.title-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 18px;
+}
+
+
+.form-title h2 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.form-title p {
+  margin: 3px 0 0;
+
+  color: #666666;
+
+  font-size: 11px;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+form {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  column-gap: 18px;
+
+  row-gap: 19px;
+}
+
+
+.form-group {
+  min-width: 0;
+}
+
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.form-group > label:not(.upload-box) {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #000000;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.form-group label span {
+  color: #e48d00;
+}
+
+
+.form-group label small {
+  color: #777777;
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================
+   INPUT BOX
+========================================= */
+
+.input-box {
+  position: relative;
+
+  width: 100%;
+
+  height: 45px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.60);
+
+  border: 1px solid rgba(36, 91, 150, 0.12);
+
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.input-box i {
+  margin-left: 14px;
+
+  color: #245b96;
+
+  font-size: 14px;
+}
+
+
+.input-box input,
+.input-box select {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+
+.input-box input {
+  padding-left: 10px;
+}
+
+
+.input-box select {
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  padding-right: 35px;
+}
+
+
+/* Dropdown arrow */
+
+.input-box:has(select)::after {
+  content: "\f282";
+
+  position: absolute;
+
+  right: 14px;
+
+  color: #245b96;
+
+  font-family: bootstrap-icons;
+
+  font-size: 12px;
+
+  pointer-events: none;
+}
+
+
+/* Placeholder */
+
+.input-box input::placeholder {
+  color: #999999;
+}
+
+
+/* Focus */
+
+.input-box:focus-within {
+  background: rgba(255, 255, 255, 0.85);
+
+  border-color: rgba(36, 91, 150, 0.35);
+
+  box-shadow:
+    0 0 0 3px rgba(36, 91, 150, 0.07);
+}
+
+
+/* =========================================
+   TEXTAREA
+========================================= */
+
+.textarea-box {
+  position: relative;
+}
+
+
+.textarea-box textarea {
+  width: 100%;
+
+  min-height: 130px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+
+  outline: none;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(36, 91, 150, 0.12);
+
+  background: rgba(255, 255, 255, 0.60);
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.textarea-box textarea::placeholder {
+  color: #999999;
+}
+
+
+.textarea-box textarea:focus {
+  background: rgba(255, 255, 255, 0.85);
+
+  border-color: rgba(36, 91, 150, 0.35);
+
+  box-shadow:
+    0 0 0 3px rgba(36, 91, 150, 0.07);
+}
+
+
+.character-count {
+  position: absolute;
+
+  bottom: 10px;
+
+  right: 12px;
+
+  color: #888888;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   FILE UPLOAD
+========================================= */
+
+.upload-box {
+  min-height: 90px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-radius: 12px;
+
+  border: 1.5px dashed rgba(36, 91, 150, 0.25);
+
+  background: rgba(255, 255, 255, 0.38);
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border 0.25s ease;
+}
+
+
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.70);
+
+  border-color: #245b96;
+}
+
+
+.upload-box input {
+  display: none;
+}
+
+
+.upload-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 19px;
+}
+
+
+.upload-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.upload-text strong {
+  color: #000000;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.upload-text span {
+  color: #777777;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   CONTACT OPTIONS
+========================================= */
+
+.contact-options {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.radio-option {
+  position: relative;
+
+  min-width: 125px;
+
+  padding: 11px 13px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.45);
+
+  border: 1px solid rgba(36, 91, 150, 0.10);
+
+  color: #000000;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.radio-option input {
+  display: none;
+}
+
+
+.custom-radio {
+  width: 14px;
+  height: 14px;
+
+  box-sizing: border-box;
+
+  border: 1.5px solid #999999;
+
+  border-radius: 50%;
+
+  position: relative;
+}
+
+
+.radio-option input:checked + .custom-radio {
+  border-color: #245b96;
+}
+
+
+.radio-option input:checked + .custom-radio::after {
+  content: "";
+
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  left: 2.5px;
+  top: 2.5px;
+
+  border-radius: 50%;
+
+  background: #245b96;
+}
+
+
+.radio-option i {
+  color: #245b96;
+}
+
+
+.radio-option:has(input:checked) {
+  background: rgba(36, 91, 150, 0.07);
+
+  border-color: rgba(36, 91, 150, 0.25);
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 8px;
+
+  margin-top: 5px;
+
+  border-top: 1px solid rgba(36, 91, 150, 0.10);
+}
+
+
+.reset-btn,
+.submit-btn {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+
+.reset-btn {
+  border: 1px solid rgba(36, 91, 150, 0.15);
+
+  background: rgba(255, 255, 255, 0.55);
+
+  color: #000000;
+}
+
+
+.reset-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+
+  color: #245b96;
+}
+
+
+.submit-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border: none;
+
+  background: #245b96;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 5px 15px rgba(36, 91, 150, 0.18);
+}
+
+
+.submit-btn:hover {
+  background: #1c4d82;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(36, 91, 150, 0.24);
+}
+
+
+/* =========================================
+   RIGHT INFORMATION COLUMN
+========================================= */
+
+.info-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   INFO CARD
+========================================= */
+
+.info-card,
+.tips-card {
+  padding: 23px;
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.50);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 8px 25px rgba(33, 79, 130, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   INFO HEADING
+========================================= */
+
+.info-heading,
+.tips-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 22px;
+}
+
+
+.info-heading h3,
+.tips-heading h3 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+.info-icon,
+.tips-heading i {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 15px;
+}
+
+
+.tips-heading i {
+  font-size: 17px;
+}
+
+
+/* =========================================
+   STEPS
+========================================= */
+
+.step {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding-bottom: 22px;
+}
+
+
+/* Connecting line */
+
+.step:not(:last-child)::before {
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+
+  top: 31px;
+
+  width: 1px;
+
+  height: calc(100% - 19px);
+
+  background: rgba(36, 91, 150, 0.15);
+}
+
+
+/* Step Number */
+
+.step-number {
+  position: relative;
+
+  z-index: 1;
+
+  width: 29px;
+  height: 29px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #245b96;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+.step h4 {
+  margin: 1px 0 3px;
+
+  color: #000000;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.step p {
+  margin: 0;
+
+  color: #666666;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   TIPS CARD
+========================================= */
+
+.tips-card {
+  border-left: 3px solid #f2a21b;
+}
+
+
+.tips-heading {
+  margin-bottom: 15px;
+}
+
+
+.tips-heading i {
+  color: #d88b00;
+
+  background: rgba(242, 162, 27, 0.12);
+}
+
+
+.tips-card ul {
+  margin: 0;
+
+  padding-left: 17px;
+}
+
+
+.tips-card li {
+  margin-bottom: 9px;
+
+  color: #444444;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+.tips-card li::marker {
+  color: #f2a21b;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .complaint-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .info-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .complaint-page {
+    padding: 20px 4% 50px;
+  }
+
+
+  .page-header {
+    padding: 20px;
+
+    border-radius: 17px;
+  }
+
+
+  .page-header h1 {
+    font-size: 23px;
+  }
+
+
+  .page-header p {
+    font-size: 11px;
+  }
+
+
+  .header-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+  }
+
+
+  .form-card {
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+
+  .full-width {
+    grid-column: auto;
+  }
+
+
+  .contact-options {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .radio-option {
+    width: 100%;
+  }
+
+
+  .form-actions {
+    grid-column: auto;
+
+    justify-content: stretch;
+  }
+
+
+  .reset-btn,
+  .submit-btn {
+    flex: 1;
+  }
+
+
+  .info-column {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .page-header {
+    align-items: flex-start;
+  }
+
+
+  .header-icon {
+    display: none;
+  }
+
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+
+  .form-title h2 {
+    font-size: 16px;
+  }
+
+
+  .form-title p {
+    font-size: 10px;
+  }
+
+
+  .upload-box {
+    padding: 14px;
+  }
+
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+
+  .reset-btn,
+  .submit-btn {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}

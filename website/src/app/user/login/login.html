@@ -1,0 +1,117 @@
+<div class="login-page">
+  <!-- Decorative background elements -->
+  <div class="bg-circle circle-one"></div>
+  <div class="bg-circle circle-two"></div>
+
+  <!-- Login Card -->
+  <div class="login-card">
+    <!-- Logo -->
+    <div class="logo-container">
+      <!-- Replace this with your college logo -->
+      <div class="logo-placeholder">
+        <i class="bi bi-building"></i>
+      </div>
+    </div>
+
+    <!-- Heading -->
+    <div class="login-heading">
+      <span class="login-label"> Student Portal </span>
+
+      <h1>Welcome Back</h1>
+
+      <p>Sign in to access your complaint portal</p>
+    </div>
+
+    <!-- Login Form -->
+    <form class="login-form" (ngSubmit)="submit()" #loginForm="ngForm">
+      <!-- Email / Student ID -->
+      <div class="form-group">
+        <label for="email"> Student ID / Email </label>
+
+        <div class="input-wrapper">
+          <i class="bi bi-person"></i>
+
+          <inpu
+            type="text"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Enter your student ID or email"
+
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <div class="label-row">
+          <label for="password"> Password </label>
+
+          <a href="#" class="forgot-link"> Forgot Password? </a>
+        </div>
+
+        <div class="input-wrapper">
+          <i class="bi bi-lock"></i>
+
+          <inpu
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Enter your password"
+
+            required
+          />
+
+          <button type="button" class="password-toggle" aria-label="Show password">
+            <i class="bi bi-eye"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Remember Me -->
+      <div class="remember-row">
+        <label class="remember-me">
+          <input type="checkbox" name="remember" />
+
+          <span class="custom-checkbox"></span>
+
+          <span>Remember me</span>
+        </label>
+      </div>
+
+      <!-- Login Button -->
+      <p *ngIf="error" class="form-error" role="alert">{{ error }}</p>
+      <button type="submit" class="login-btn" [disabled]="loading || !loginForm.valid">
+        <span>{{ loading ? 'Signing in…' : 'Sign In' }}</span>
+
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </form>
+
+
+    <!-- Divider -->
+    <div class="divider">
+      <span>OR</span>
+    </div>
+
+    <!-- Register -->
+    <div class="register-section">
+      <p>Don't have an account?</p>
+
+      <a routerLink="/register" class="register-link">
+        Create Accoun
+
+        <i class="bi bi-arrow-up-right"></i>
+      </a>
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="login-footer">
+      <i class="bi bi-shield-check"></i>
+
+      <span> Your information is securely protected </span>
+    </div>
+  </div>
+</div>

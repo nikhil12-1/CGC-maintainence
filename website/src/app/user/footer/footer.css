@@ -1,0 +1,501 @@
+/* =========================================
+   LIQUID UI FOOTER
+========================================= */
+
+.liquid-footer {
+  position: relative;
+
+  margin-top: 60px;
+
+  width: 100%;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(36, 91, 150, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 70%,
+      rgba(242, 162, 27, 0.07),
+      transparent 28%
+    ),
+    #eaf2f8;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+
+  overflow: hidden;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #000000;
+}
+
+
+/* =========================================
+   LIQUID DECORATIVE SHAPES
+========================================= */
+
+.liquid-shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(2px);
+}
+
+.shape-one {
+  width: 260px;
+  height: 260px;
+
+  top: -130px;
+  right: 8%;
+
+  background: rgba(36, 91, 150, 0.06);
+}
+
+.shape-two {
+  width: 200px;
+  height: 200px;
+
+  bottom: -100px;
+  left: 5%;
+
+  background: rgba(242, 162, 27, 0.05);
+}
+
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+  position: relative;
+  z-index: 1;
+
+  width: 90%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 55px 0 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 45px;
+}
+
+
+/* =========================================
+   FOOTER SECTION
+========================================= */
+
+.footer-section {
+  min-width: 0;
+}
+
+
+/* Section Heading */
+
+.footer-section h3 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* Orange Heading Line */
+
+.heading-line {
+  display: block;
+
+  width: 58px;
+  height: 3px;
+
+  margin-top: 10px;
+  margin-bottom: 22px;
+
+  background: #f2a21b;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 8px rgba(242, 162, 27, 0.25);
+}
+
+
+/* =========================================
+   FOOTER LINKS
+========================================= */
+
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+
+.footer-section ul li a {
+  position: relative;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 450;
+
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+}
+
+
+/* Small arrow */
+
+.footer-section ul li a::before {
+  content: "›";
+
+  position: absolute;
+
+  left: -14px;
+
+  opacity: 0;
+
+  color: #f2a21b;
+
+  transition: 0.25s;
+}
+
+
+/* Hover */
+
+.footer-section ul li a:hover {
+  color: #245b96;
+
+  padding-left: 14px;
+}
+
+
+.footer-section ul li a:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 17px;
+}
+
+
+.contact-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  color: #245b96;
+
+  box-shadow:
+    0 4px 12px rgba(33, 79, 130, 0.06),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+
+  transition: 0.25s;
+}
+
+
+.contact-icon i {
+  font-size: 15px;
+}
+
+
+.contact-item:hover .contact-icon {
+  background: #245b96;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+.contact-item p {
+  margin: 2px 0 0;
+
+  color: #000000;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+
+  border-top: 1px solid rgba(36, 91, 150, 0.10);
+
+  background: rgba(255, 255, 255, 0.35);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+
+.bottom-container {
+  width: 90%;
+  max-width: 1400px;
+
+  min-height: 70px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.bottom-container p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.60);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  color: #245b96;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 4px 12px rgba(33, 79, 130, 0.06);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.social-links a:hover {
+  background: #245b96;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 7px 18px rgba(33, 79, 130, 0.18);
+}
+
+
+.social-links a i {
+  font-size: 14px;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-top {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #f2a21b;
+
+  color: #000000;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  box-shadow:
+    0 5px 15px rgba(242, 162, 27, 0.20);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.back-top:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(242, 162, 27, 0.30);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .footer-container {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 40px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .footer-container {
+    width: 86%;
+
+    padding: 40px 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  .footer-section h3 {
+    font-size: 16px;
+  }
+
+
+  .bottom-container {
+    width: 86%;
+
+    padding: 20px 0;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 15px;
+  }
+
+
+  .social-links {
+    order: 2;
+  }
+
+
+  .back-top {
+    order: 3;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .footer-container {
+    width: 84%;
+  }
+
+  .bottom-container {
+    width: 84%;
+  }
+
+  .bottom-container p {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+}

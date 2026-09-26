@@ -1,0 +1,408 @@
+<div class="home-page">
+
+  <!-- ==============================
+       HERO SECTION
+  =============================== -->
+
+  <section class="hero-section">
+
+    <!-- Left Content -->
+    <div class="hero-content">
+
+      <span class="welcome-text">
+        Welcome to
+      </span>
+
+      <h1>
+        Complaint & Maintenance
+        <span>Portal</span>
+      </h1>
+
+      <p>
+        Report an issue, track it in real-time,
+        and help us keep the campus safe,
+        clean and well-maintained.
+      </p>
+
+      <!-- Hero Buttons -->
+      <div class="hero-buttons">
+
+        <a
+          routerLink="/submit"
+          class="primary-btn">
+          <i class="bi bi-plus-circle"></i>
+          Submit a Complaint
+        </a>
+
+        <a
+          routerLink="/track"
+          class="secondary-btn">
+          <i class="bi bi-geo-alt"></i>
+          Track Complaint
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- College Building -->
+    <div class="building-container">
+
+      <div class="building-glow"></div>
+
+      <div class="building-image">
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUtaihDYK7UwLNEKPNn9dyi3IG08hTjuwrVFoex8T-sVauNYC3PLkaAI&s=10"
+          alt="College Building">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==============================
+       COMPLAINT STATISTICS
+  =============================== -->
+
+  <section class="statistics-section">
+
+    <div class="stat-card">
+
+      <div class="stat-icon pending">
+        <i class="bi bi-hourglass-split"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <h2>{{ data?.pending ?? '—' }}</h2>
+
+        <p>Pending</p>
+
+        <span>Needs attention</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon progress">
+        <i class="bi bi-arrow-repeat"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <h2>{{ data?.inProgress ?? '—' }}</h2>
+
+        <p>In Progress</p>
+
+        <span>Being resolved</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon resolved">
+        <i class="bi bi-check-circle"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <h2>{{ data?.resolved ?? '—' }}</h2>
+
+        <p>Resolved</p>
+
+        <span>This week</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon success">
+        <i class="bi bi-graph-up-arrow"></i>
+      </div>
+
+      <div class="stat-content">
+
+        <h2>{{ data?.resolutionRate ?? 0 }}%</h2>
+
+        <p>Resolution Rate</p>
+
+        <span>This month</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==============================
+       QUICK SERVICES
+  =============================== -->
+
+  <section class="services-section">
+
+    <div class="section-heading">
+
+      <div>
+        <span>Explore</span>
+        <h2>Quick Services</h2>
+      </div>
+
+      <a routerLink="/services">
+        View All
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <!-- Electrical -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Electrical'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-lightning-charge"></i>
+        </div>
+
+        <h3>Electrical</h3>
+
+        <p>Lights, fans & power</p>
+
+      </a>
+
+
+      <!-- Plumbing -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Plumbing'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-droplet"></i>
+        </div>
+
+        <h3>Plumbing</h3>
+
+        <p>Water & leakage issues</p>
+
+      </a>
+
+
+      <!-- Cleaning -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Cleaning'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-stars"></i>
+        </div>
+
+        <h3>Cleaning</h3>
+
+        <p>Cleanliness & hygiene</p>
+
+      </a>
+
+
+      <!-- AC -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'AC'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-snow"></i>
+        </div>
+
+        <h3>AC / Fan</h3>
+
+        <p>Cooling problems</p>
+
+      </a>
+
+
+      <!-- IT -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'IT'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-router"></i>
+        </div>
+
+        <h3>IT & Network</h3>
+
+        <p>Internet & connectivity</p>
+
+      </a>
+
+
+      <!-- Furniture -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Furniture'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-table"></i>
+        </div>
+
+        <h3>Furniture</h3>
+
+        <p>Desk & chair issues</p>
+
+      </a>
+
+
+      <!-- Civil -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Civil'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-building"></i>
+        </div>
+
+        <h3>Civil Maintenance</h3>
+
+        <p>Building & infrastructure</p>
+
+      </a>
+
+
+      <!-- Laboratory -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Laboratory'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-flask"></i>
+        </div>
+
+        <h3>Laboratory</h3>
+
+        <p>Lab equipment & facilities</p>
+
+      </a>
+
+
+      <!-- Hostel -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Hostel'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-house"></i>
+        </div>
+
+        <h3>Hostel</h3>
+
+        <p>Hostel maintenance</p>
+
+      </a>
+
+
+      <!-- Transport -->
+      <a
+        routerLink="/submit"
+        [queryParams]="{category: 'Transport'}"
+        class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-bus-front"></i>
+        </div>
+
+        <h3>Transport</h3>
+
+        <p>Bus & transport issues</p>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ==============================
+       RECENT COMPLAINTS
+  =============================== -->
+
+  <section class="recent-section">
+
+    <div class="section-heading">
+
+      <div>
+        <span>Your Activity</span>
+        <h2>Recent Complaints</h2>
+      </div>
+
+      <a routerLink="/complaint">
+        View All
+        <i class="bi bi-arrow-right"></i>
+      </a>
+
+    </div>
+
+
+    <div class="complaint-list">
+
+      <p *ngIf="loading">Loading your recent activity…</p>
+      <p *ngIf="error" class="form-error" role="alert">{{ error }}</p>
+      <p *ngIf="!loading && !data?.recent?.length">Your submitted complaints will appear here.</p>
+      <ng-container *ngFor="let item of data?.recent">
+
+      <div class="complaint-card">
+
+        <div class="complaint-icon">
+          <i class="bi bi-lightning-charge"></i>
+        </div>
+
+        <div class="complaint-details">
+
+          <h3>{{ item.subject }}</h3>
+
+          <p>
+            {{ item.location }} · {{ item.category }}
+          </p>
+
+        </div>
+
+        <div class="complaint-status pending-status">
+          {{ item.status }}
+        </div>
+
+      </div>
+
+
+      </ng-container>
+
+    </div>
+
+  </section>
+
+</div>

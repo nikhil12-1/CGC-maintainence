@@ -1,0 +1,487 @@
+<div class="complaint-page">
+
+  <!-- Page Header -->
+  <div class="page-header">
+
+    <div>
+      <span class="page-label">Complaint Portal</span>
+
+      <h1>Submit a Complaint</h1>
+
+      <p>
+        Report an issue on campus and help us keep the
+        college environment safe, clean and well-maintained.
+      </p>
+    </div>
+
+    <div class="header-icon">
+      <i class="bi bi-megaphone"></i>
+    </div>
+
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="complaint-layout">
+
+    <!-- Form -->
+    <div class="form-card">
+
+      <div class="form-title">
+
+        <div class="title-icon">
+          <i class="bi bi-file-earmark-text"></i>
+        </div>
+
+        <div>
+          <h2>Complaint Details</h2>
+
+          <p>
+            Please provide accurate information about the issue.
+          </p>
+        </div>
+
+      </div>
+
+
+      <form (ngSubmit)="submit()" #complaintForm="ngForm">
+
+        <!-- Complaint Title -->
+        <div class="form-group full-width">
+
+          <label for="title">
+            Complaint Title
+            <span>*</span>
+          </label>
+
+          <div class="input-box">
+
+            <i class="bi bi-pencil"></i>
+
+            <input
+              type="text"
+              id="title"
+              name="title"
+              [(ngModel)]="form.subject" required minlength="3" maxlength="150"
+              placeholder="e.g. Classroom fan is not working"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- Category -->
+        <div class="form-group">
+
+          <label for="category">
+            Category
+            <span>*</span>
+          </label>
+
+          <div class="input-box">
+
+            <i class="bi bi-grid"></i>
+
+            <select id="category" name="category" [(ngModel)]="form.category" required>
+
+              <option value="" selected disabled>
+                Select category
+              </option>
+
+              <option value="electrical">
+                Electrical
+              </option>
+
+              <option value="plumbing">
+                Plumbing
+              </option>
+
+              <option value="Cleaning">
+                Cleaning
+              </option>
+
+              <option value="AC / Fan">
+                AC / Fan
+              </option>
+
+              <option value="IT & Network">
+                IT & Network
+              </option>
+
+              <option value="furniture">
+                Furniture
+              </option>
+
+              <option value="Civil Maintenance">
+                Civil Maintenance
+              </option>
+
+              <option value="laboratory">
+                Laboratory
+              </option>
+
+              <option value="hostel">
+                Hostel
+              </option>
+
+              <option value="transport">
+                Transport
+              </option>
+
+              <option value="other">
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- Location -->
+        <div class="form-group">
+
+          <label for="location">
+            Location
+            <span>*</span>
+          </label>
+
+          <div class="input-box">
+
+            <i class="bi bi-geo-alt"></i>
+
+            <input
+              type="text"
+              id="location"
+              name="location"
+              [(ngModel)]="form.location" required maxlength="200"
+              placeholder="e.g. Block A, Room 204"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- Priority -->
+        <div class="form-group">
+
+          <label for="priority">
+            Priority
+            <span>*</span>
+          </label>
+
+          <div class="input-box">
+
+            <i class="bi bi-flag"></i>
+
+            <select id="priority" name="priority" [(ngModel)]="form.priority" required>
+
+              <option value="" selected disabled>
+                Select priority
+              </option>
+
+              <option value="low">
+                Low
+              </option>
+
+              <option value="medium">
+                Medium
+              </option>
+
+              <option value="high">
+                High
+              </option>
+
+              <option value="Urgent">
+                Urgent
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- Description -->
+        <div class="form-group full-width">
+
+          <label for="description">
+            Description
+            <span>*</span>
+          </label>
+
+          <div class="textarea-box">
+
+            <textarea
+              id="description"
+              name="description"
+              [(ngModel)]="form.description" required minlength="10" maxlength="5000"
+              rows="5"
+              maxlength="500"
+              placeholder="Describe the problem in detail..."
+            ></textarea>
+
+            <span class="character-count">
+              Maximum 500 characters
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- Attachment -->
+        <div class="form-group full-width">
+
+          <label>
+            Attach Image
+            <small>(Optional)</small>
+          </label>
+
+          <label class="upload-box">
+
+            <input
+              type="file"
+              accept="image/*"
+              (change)="fileSelected($event)"
+            >
+
+            <div class="upload-icon">
+              <i class="bi bi-cloud-arrow-up"></i>
+            </div>
+
+            <div class="upload-text">
+
+              <strong>
+                Click to upload an image
+              </strong>
+
+              <span>
+                PNG, JPG or JPEG · Maximum 5 MB
+              </span>
+
+            </div>
+
+          </label>
+
+        </div>
+
+
+        <!-- Contact Preference -->
+        <div class="form-group full-width">
+
+          <label>
+            Preferred Contact Method
+          </label>
+
+          <div class="contact-options">
+
+            <label class="radio-option">
+
+              <input
+                type="radio"
+                name="contact"
+                value="email"
+                [(ngModel)]="form.contactPreference"
+                checked
+              >
+
+              <span class="custom-radio"></span>
+
+              <i class="bi bi-envelope"></i>
+
+              Email
+
+            </label>
+
+
+            <label class="radio-option">
+
+              <input
+                type="radio"
+                name="contact"
+                value="phone"
+                [(ngModel)]="form.contactPreference"
+              >
+
+              <span class="custom-radio"></span>
+
+              <i class="bi bi-telephone"></i>
+
+              Phone
+
+            </label>
+
+
+            <label class="radio-option">
+
+              <input
+                type="radio"
+                name="contact"
+                value="none"
+                [(ngModel)]="form.contactPreference"
+              >
+
+              <span class="custom-radio"></span>
+
+              <i class="bi bi-slash-circle"></i>
+
+              No Contact
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="form-actions">
+
+          <p *ngIf="error" class="form-error" role="alert">{{ error }}</p>
+          <p *ngIf="success" class="form-success" role="status">{{ success }}</p>
+          <button
+            type="reset"
+            class="reset-btn">
+
+            <i class="bi bi-arrow-counterclockwise"></i>
+
+            Reset
+
+          </button>
+
+
+          <button
+            type="submit"
+            class="submit-btn" [disabled]="loading || !complaintForm.valid">
+
+            {{ loading ? 'Submitting…' : 'Submit Complaint' }}
+
+            <i class="bi bi-arrow-right"></i>
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <!-- Right Information Card -->
+    <div class="info-column">
+
+      <!-- How it Works -->
+      <div class="info-card">
+
+        <div class="info-heading">
+
+          <div class="info-icon">
+            <i class="bi bi-info-circle"></i>
+          </div>
+
+          <h3>How it works</h3>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <div>
+            <h4>Submit</h4>
+            <p>
+              Provide details about the issue.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <div>
+            <h4>Review</h4>
+            <p>
+              The maintenance team reviews your complaint.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <div>
+            <h4>Resolve</h4>
+            <p>
+              The issue is assigned and resolved.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">4</div>
+
+          <div>
+            <h4>Track</h4>
+            <p>
+              Track the progress from your dashboard.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Tips -->
+      <div class="tips-card">
+
+        <div class="tips-heading">
+
+          <i class="bi bi-lightbulb"></i>
+
+          <h3>Helpful Tips</h3>
+
+        </div>
+
+        <ul>
+
+          <li>
+            Provide the exact location of the issue.
+          </li>
+
+          <li>
+            Add a clear image whenever possible.
+          </li>
+
+          <li>
+            Select the correct complaint category.
+          </li>
+
+          <li>
+            Use urgent priority only for critical issues.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

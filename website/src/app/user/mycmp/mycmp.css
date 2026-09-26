@@ -1,0 +1,1203 @@
+/* =========================================
+   MY COMPLAINTS PAGE
+========================================= */
+
+.complaints-page {
+
+  min-height: 100vh;
+
+  padding: 35px 5% 70px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 10%,
+      rgba(36, 91, 150, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 60%,
+      rgba(242, 162, 27, 0.06),
+      transparent 28%
+    ),
+    #edf4fa;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  color: #000000;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+
+  max-width: 1400px;
+
+  margin: 0 auto 20px;
+
+  padding: 24px 28px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.52);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 8px 28px rgba(33, 79, 130, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+.page-label {
+
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #245b96;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+
+.header-content h1 {
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+
+.header-content p {
+
+  margin: 6px 0 0;
+
+  color: #555555;
+
+  font-size: 11px;
+}
+
+
+.header-icon {
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+
+  font-size: 22px;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+
+  max-width: 1400px;
+
+  margin: 0 auto 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+}
+
+
+.stat-card {
+
+  padding: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.52);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 7px 22px rgba(33, 79, 130, 0.05);
+}
+
+
+.stat-icon {
+
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+}
+
+
+.stat-icon.total {
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+}
+
+
+.stat-icon.pending {
+
+  background: rgba(242, 162, 27, 0.11);
+
+  color: #d88b00;
+}
+
+
+.stat-icon.progress {
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+}
+
+
+.stat-icon.resolved {
+
+  background: rgba(55, 150, 100, 0.10);
+
+  color: #287c50;
+}
+
+
+.stat-info span {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #777777;
+
+  font-size: 9px;
+}
+
+
+.stat-info h2 {
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.complaints-toolbar {
+
+  max-width: 1400px;
+
+  margin: 0 auto 15px;
+
+  padding: 17px 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.48);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+}
+
+
+.toolbar-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.toolbar-left h2 {
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 15px;
+}
+
+
+.complaint-count {
+
+  padding: 4px 8px;
+
+  border-radius: 10px;
+
+  background: rgba(36, 91, 150, 0.08);
+
+  color: #245b96;
+
+  font-size: 8px;
+
+  font-weight: 600;
+}
+
+
+.toolbar-right {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+
+  height: 37px;
+
+  width: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid rgba(36, 91, 150, 0.10);
+}
+
+
+.search-box i {
+
+  margin-left: 11px;
+
+  color: #245b96;
+
+  font-size: 11px;
+}
+
+
+.search-box input {
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 9px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 9px;
+}
+
+
+.search-box input::placeholder {
+
+  color: #999999;
+}
+
+
+/* =========================================
+   FILTER
+========================================= */
+
+.filter-box {
+
+  height: 37px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0 9px;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid rgba(36, 91, 150, 0.10);
+}
+
+
+.filter-box i {
+
+  color: #245b96;
+
+  font-size: 10px;
+}
+
+
+.filter-box select {
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   NEW COMPLAINT BUTTON
+========================================= */
+
+.new-complaint-btn {
+
+  height: 37px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  border-radius: 9px;
+
+  background: #245b96;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+
+.new-complaint-btn:hover {
+
+  background: #1c4d82;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 15px rgba(36, 91, 150, 0.18);
+}
+
+
+/* =========================================
+   COMPLAINT LIST
+========================================= */
+
+.complaints-list {
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =========================================
+   COMPLAINT CARD
+========================================= */
+
+.complaint-card {
+
+  padding: 17px 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.54);
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 7px 22px rgba(33, 79, 130, 0.05);
+
+  transition: 0.25s;
+}
+
+
+.complaint-card:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 28px rgba(33, 79, 130, 0.09);
+}
+
+
+/* =========================================
+   MAIN COMPLAINT CONTENT
+========================================= */
+
+.complaint-main {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+}
+
+
+.category-icon {
+
+  width: 47px;
+  height: 47px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-size: 18px;
+}
+
+
+.category-icon.electrical {
+
+  background: rgba(242, 162, 27, 0.11);
+
+  color: #d88b00;
+}
+
+
+.category-icon.plumbing {
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+}
+
+
+.category-icon.cleaning {
+
+  background: rgba(55, 150, 100, 0.10);
+
+  color: #287c50;
+}
+
+
+.category-icon.wifi {
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+}
+
+
+.category-icon.furniture {
+
+  background: rgba(120, 90, 150, 0.09);
+
+  color: #655080;
+}
+
+
+/* =========================================
+   COMPLAINT INFO
+========================================= */
+
+.complaint-info {
+
+  min-width: 0;
+}
+
+
+.complaint-title-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 6px;
+}
+
+
+.complaint-title-row h3 {
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+  padding: 4px 8px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border-radius: 10px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+.status span {
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+}
+
+
+.progress-status {
+
+  background: rgba(36, 91, 150, 0.09);
+
+  color: #245b96;
+}
+
+
+.progress-status span {
+
+  background: #245b96;
+}
+
+
+.pending-status {
+
+  background: rgba(242, 162, 27, 0.11);
+
+  color: #c27d00;
+}
+
+
+.pending-status span {
+
+  background: #f2a21b;
+}
+
+
+.resolved-status {
+
+  background: rgba(55, 150, 100, 0.10);
+
+  color: #287c50;
+}
+
+
+.resolved-status span {
+
+  background: #287c50;
+}
+
+
+/* =========================================
+   META
+========================================= */
+
+.complaint-meta {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 6px;
+}
+
+
+.complaint-meta span {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  color: #777777;
+
+  font-size: 8px;
+}
+
+
+.complaint-meta i {
+
+  color: #245b96;
+
+  font-size: 8px;
+}
+
+
+.complaint-description {
+
+  max-width: 700px;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #666666;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   ACTIONS
+========================================= */
+
+.complaint-actions {
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+/* =========================================
+   PRIORITY
+========================================= */
+
+.priority {
+
+  padding: 5px 9px;
+
+  border-radius: 10px;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+.priority.high {
+
+  background: rgba(220, 80, 60, 0.08);
+
+  color: #c45040;
+}
+
+
+.priority.medium {
+
+  background: rgba(242, 162, 27, 0.10);
+
+  color: #c27d00;
+}
+
+
+.priority.low {
+
+  background: rgba(55, 150, 100, 0.09);
+
+  color: #287c50;
+}
+
+
+/* =========================================
+   TRACK LINK
+========================================= */
+
+.track-link {
+
+  min-width: 68px;
+
+  height: 32px;
+
+  padding: 0 9px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border-radius: 8px;
+
+  background: rgba(36, 91, 150, 0.08);
+
+  color: #245b96;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  transition: 0.25s;
+}
+
+
+.track-link:hover {
+
+  background: #245b96;
+
+  color: #ffffff;
+}
+
+
+.track-link i {
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+
+  max-width: 1400px;
+
+  margin: 22px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+}
+
+
+.pagination-btn {
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(36, 91, 150, 0.10);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.52);
+
+  color: #000000;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.pagination-btn:hover {
+
+  background: rgba(36, 91, 150, 0.08);
+
+  color: #245b96;
+}
+
+
+.pagination-btn.active {
+
+  background: #245b96;
+
+  border-color: #245b96;
+
+  color: #ffffff;
+}
+
+
+.pagination-btn.disabled {
+
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .complaints-toolbar {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .toolbar-right {
+
+    width: 100%;
+  }
+
+
+  .search-box {
+
+    flex: 1;
+
+    width: auto;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .complaints-page {
+
+    padding: 20px 4% 50px;
+  }
+
+
+  .page-header {
+
+    padding: 20px;
+
+    border-radius: 17px;
+  }
+
+
+  .header-content h1 {
+
+    font-size: 23px;
+  }
+
+
+  .header-content p {
+
+    font-size: 10px;
+  }
+
+
+  .header-icon {
+
+    width: 47px;
+    height: 47px;
+  }
+
+
+  .stats-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .stat-card {
+
+    padding: 13px;
+
+  }
+
+
+  .stat-icon {
+
+    width: 37px;
+    height: 37px;
+  }
+
+
+  .stat-info h2 {
+
+    font-size: 18px;
+  }
+
+
+  .complaints-toolbar {
+
+    padding: 15px;
+
+  }
+
+
+  .toolbar-right {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+  }
+
+
+  .search-box {
+
+    width: 100%;
+
+    grid-column: span 2;
+  }
+
+
+  .filter-box {
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .new-complaint-btn {
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .complaint-card {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 16px;
+
+  }
+
+
+  .complaint-main {
+
+    width: 100%;
+
+    align-items: flex-start;
+  }
+
+
+  .complaint-title-row {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+
+  .complaint-actions {
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(36, 91, 150, 0.07);
+  }
+
+
+  .complaint-description {
+
+    white-space: normal;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+  .stats-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .toolbar-right {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .search-box {
+
+    grid-column: span 1;
+  }
+
+
+  .complaint-meta {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+  }
+
+
+  .category-icon {
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 16px;
+  }
+
+}

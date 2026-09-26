@@ -1,0 +1,217 @@
+<div class="complaints-page">
+
+  <!-- ================================
+       PAGE HEADER
+  ================================= -->
+
+  <div class="page-header">
+
+    <div class="header-content">
+
+      <span class="page-label">Complaint Portal</span>
+
+      <h1>My Complaints</h1>
+
+      <p>
+        View and manage all the complaints you have submitted.
+      </p>
+
+    </div>
+
+    <div class="header-icon">
+      <i class="bi bi-file-earmark-text"></i>
+    </div>
+
+  </div>
+
+
+  <!-- ================================
+       STATISTICS
+  ================================= -->
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+
+      <div class="stat-icon total">
+        <i class="bi bi-files"></i>
+      </div>
+
+      <div class="stat-info">
+
+        <span>Total Complaints</span>
+
+        <h2>{{ stats?.total ?? '—' }}</h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon pending">
+        <i class="bi bi-hourglass-split"></i>
+      </div>
+
+      <div class="stat-info">
+
+        <span>Pending</span>
+
+        <h2>{{ stats?.pending ?? '—' }}</h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon progress">
+        <i class="bi bi-arrow-repeat"></i>
+      </div>
+
+      <div class="stat-info">
+
+        <span>In Progress</span>
+
+        <h2>{{ stats?.inProgress ?? '—' }}</h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+      <div class="stat-icon resolved">
+        <i class="bi bi-check-circle"></i>
+      </div>
+
+      <div class="stat-info">
+
+        <span>Resolved</span>
+
+        <h2>{{ stats?.resolved ?? '—' }}</h2>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================================
+       TOOLBAR
+  ================================= -->
+
+  <div class="complaints-toolbar">
+
+    <div class="toolbar-left">
+
+      <h2>Complaint History</h2>
+
+      <span class="complaint-count">
+        {{ total }} complaints
+      </span>
+
+    </div>
+
+
+    <div class="toolbar-right">
+
+      <!-- Search -->
+
+      <div class="search-box">
+
+        <i class="bi bi-search"></i>
+
+        <input
+          type="text"
+          placeholder="Search complaint..."
+          [(ngModel)]="search"
+          (keyup.enter)="page = 1; load()"
+        >
+
+      </div>
+
+
+      <!-- Filter -->
+
+      <div class="filter-box">
+
+        <i class="bi bi-funnel"></i>
+
+        <select [(ngModel)]="status" (change)="page = 1; load()">
+
+          <option value="">All Status</option>
+
+          <option value="Submitted">Pending</option>
+          <option value="Under Review">Under Review</option>
+
+          <option value="In Progress">
+            In Progress
+          </option>
+
+          <option value="Resolved">
+            Resolved
+          </option>
+
+          <option value="Rejected">
+            Rejected
+          </option>
+          <option value="Closed">Closed</option>
+
+        </select>
+
+      </div>
+
+
+      <!-- New Complaint -->
+
+      <a
+        routerLink="/submit"
+        class="new-complaint-btn">
+
+        <i class="bi bi-plus-lg"></i>
+
+        New Complaint
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================================
+       COMPLAINT LIST
+  ================================= -->
+
+  <div class="complaints-list">
+    <p *ngIf="loading">Loading complaints…</p>
+    <p *ngIf="error" class="form-error" role="alert">{{ error }}</p>
+    <div class="complaint-card" *ngFor="let item of items">
+      <div class="complaint-main">
+        <div class="category-icon" [ngClass]="categoryClass(item.category)"><i class="bi bi-file-earmark-text"></i></div>
+        <div class="complaint-info">
+          <div class="complaint-title-row"><h3>{{ item.subject }}</h3><span class="status" [ngClass]="statusClass(item.status)"><span></span>{{ item.status }}</span></div>
+          <div class="complaint-meta"><span><i class="bi bi-hash"></i>{{ item.complaintId }}</span><span><i class="bi bi-grid"></i>{{ item.category }}</span><span><i class="bi bi-geo-alt"></i>{{ item.location }}</span><span><i class="bi bi-calendar3"></i>{{ item.createdAt | date:"mediumDate" }}</span></div>
+          <p class="complaint-description">{{ item.description }}</p>
+        </div>
+      </div>
+      <div class="complaint-actions"><span class="priority" [ngClass]="item.priority.toLowerCase()">{{ item.priority }} Priority</span><a routerLink="/track" [queryParams]="{id: item.complaintId}" class="track-link">Track <i class="bi bi-arrow-right"></i></a></div>
+    </div>
+    <p *ngIf="!loading && !items.length && !error">No complaints found. Your submitted complaints will appear here.</p>
+  </div>
+  <!-- ================================
+       PAGINATION
+  ================================= -->
+
+  <div class="pagination" *ngIf="pages > 1">
+    <button class="pagination-btn" [disabled]="page === 1" (click)="changePage(page - 1)"><i class="bi bi-chevron-left"></i></button>
+    <button class="pagination-btn" [class.active]="n === page" *ngFor="let n of pageNumbers" (click)="changePage(n)">{{ n }}</button>
+    <button class="pagination-btn" [disabled]="page === pages" (click)="changePage(page + 1)"><i class="bi bi-chevron-right"></i></button>
+  </div>
+
+</div>

@@ -1,0 +1,285 @@
+<div class="profile-page">
+
+  <!-- Background Decoration -->
+  <div class="bg-circle circle-one"></div>
+  <div class="bg-circle circle-two"></div>
+
+
+  <div class="profile-container">
+
+    <!-- Page Header -->
+    <div class="page-heading">
+
+      <div>
+        <span class="page-label">ACCOUNT</span>
+
+        <h1>My Profile</h1>
+
+        <p>
+          Manage your personal information and account settings
+        </p>
+      </div>
+
+      <button class="edit-btn" (click)="edit ? save() : edit = true">
+        <i class="bi bi-pencil"></i>
+        {{ edit ? (saving ? 'Saving…' : 'Save Profile') : 'Edit Profile' }}
+      </button>
+
+    </div>
+
+
+    <!-- Profile Overview -->
+    <div class="profile-overview glass-card">
+
+      <!-- Profile Image -->
+      <div class="profile-image-section">
+
+        <div class="profile-image">
+          <img
+            src="assets/images/profile.jpg"
+            alt="Profile Picture"
+          >
+        </div>
+
+        <button class="change-photo-btn">
+          <i class="bi bi-camera"></i>
+          Change Photo
+        </button>
+
+      </div>
+
+
+      <!-- Basic Information -->
+      <div class="profile-basic">
+
+        <span class="student-badge">
+          <i class="bi bi-patch-check-fill"></i>
+          Student
+        </span>
+
+        <h2 *ngIf="!edit">{{ user?.name || 'Loading profile…' }}</h2>
+        <input *ngIf="edit" [(ngModel)]="user!.name" name="name" aria-label="Full name">
+
+        <p class="student-id">
+          <i class="bi bi-person-badge"></i>
+          Student ID: {{ user?.studentId || '—' }}
+        </p>
+
+        <p class="email">
+          <i class="bi bi-envelope"></i>
+          {{ user?.email || '—' }}
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- Information Cards -->
+    <div class="information-grid">
+
+
+      <!-- Personal Information -->
+      <div class="glass-card information-card">
+
+        <div class="card-title">
+
+          <div class="title-icon">
+            <i class="bi bi-person"></i>
+          </div>
+
+          <div>
+            <h3>Personal Information</h3>
+            <p>Your basic personal details</p>
+          </div>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <div class="detail-item">
+            <span>First Name</span>
+            <strong>{{ user?.name || '—' }}</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Phone</span>
+            <strong *ngIf="!edit">{{ user?.phone || 'Not provided' }}</strong><input *ngIf="edit" [(ngModel)]="user!.phone" name="phone" aria-label="Phone number">
+          </div>
+
+          <div class="detail-item">
+            <span>Student ID</span>
+            <strong>{{ user?.studentId || '—' }}</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Email Address</span>
+            <strong>{{ user?.email || '—' }}</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Academic Information -->
+      <div class="glass-card information-card">
+
+        <div class="card-title">
+
+          <div class="title-icon academic-icon">
+            <i class="bi bi-mortarboard"></i>
+          </div>
+
+          <div>
+            <h3>Academic Information</h3>
+            <p>Your college and academic details</p>
+          </div>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <div class="detail-item">
+            <span>Department</span>
+            <strong *ngIf="!edit">{{ user?.department || '—' }}</strong><input *ngIf="edit" [(ngModel)]="user!.department" name="department" aria-label="Department">
+          </div>
+
+          <div class="detail-item">
+            <span>Semester</span>
+            <strong *ngIf="!edit">{{ user?.semester }}{{ user?.semester === 1 ? 'st' : user?.semester === 2 ? 'nd' : user?.semester === 3 ? 'rd' : 'th' }} Semester</strong><input *ngIf="edit" type="number" min="1" max="16" [(ngModel)]="user!.semester" name="semester" aria-label="Semester">
+          </div>
+
+          <div class="detail-item">
+            <span>Section</span>
+            <strong>—</strong>
+          </div>
+
+          <div class="detail-item">
+            <span>Enrollment Year</span>
+            <strong>{{ user?.year || '—' }}</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Account Settings -->
+    <div class="glass-card settings-card">
+
+      <div class="card-title">
+
+        <div class="title-icon settings-icon">
+          <i class="bi bi-gear"></i>
+        </div>
+
+        <div>
+          <h3>Account Settings</h3>
+          <p>Manage your account preferences</p>
+        </div>
+
+      </div>
+
+
+      <div class="settings-list">
+
+
+        <!-- Change Password -->
+        <div class="setting-item">
+
+          <div class="setting-left">
+
+            <div class="setting-icon">
+              <i class="bi bi-lock"></i>
+            </div>
+
+            <div>
+              <h4>Change Password</h4>
+
+              <p>
+                Update your account password
+              </p>
+            </div>
+
+          </div>
+
+          <button class="setting-btn" (click)="passwordOpen = !passwordOpen">
+            Change
+            <i class="bi bi-chevron-right"></i>
+          </button>
+
+        </div>
+        <form *ngIf="passwordOpen" class="setting-item" (ngSubmit)="changePassword()"><input type="password" name="currentPassword" [(ngModel)]="currentPassword" placeholder="Current password" required><input type="password" name="newPassword" [(ngModel)]="newPassword" placeholder="New password (8+ characters)" minlength="8" required><button type="submit" class="setting-btn" [disabled]="passwordSaving">{{ passwordSaving ? 'Updating…' : 'Update password' }}</button><span *ngIf="passwordMessage" role="status">{{ passwordMessage }}</span></form>
+
+
+        <!-- Notifications -->
+        <div class="setting-item">
+
+          <div class="setting-left">
+
+            <div class="setting-icon">
+              <i class="bi bi-bell"></i>
+            </div>
+
+            <div>
+              <h4>Notifications</h4>
+
+              <p>
+                Manage complaint and system notifications
+              </p>
+            </div>
+
+          </div>
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <!-- Logout -->
+        <div class="setting-item logout-item">
+
+          <div class="setting-left">
+
+            <div class="setting-icon logout-icon">
+              <i class="bi bi-box-arrow-right"></i>
+            </div>
+
+            <div>
+              <h4>Logout</h4>
+
+              <p>
+                Sign out from your account
+              </p>
+            </div>
+
+          </div>
+
+          <button class="logout-btn" (click)="logout()">
+            Logout
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
