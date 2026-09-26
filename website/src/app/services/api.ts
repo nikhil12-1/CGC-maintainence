@@ -7,7 +7,7 @@ export interface Complaint { _id: string; complaintId: string; category: string;
 export interface ComplaintPage { items: Complaint[]; total: number; page: number; pages: number; }
 export interface Dashboard { total: number; pending: number; inProgress: number; resolved: number; resolutionRate: number; recent: Complaint[]; }
 
-const API = 'http://localhost:5000/api';
+const API = 'https://cgc-maintainence.onrender.com/api';
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
