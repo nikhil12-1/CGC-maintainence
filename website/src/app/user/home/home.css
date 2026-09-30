@@ -114,7 +114,7 @@
 
   color: #245b96;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -184,7 +184,7 @@
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -444,7 +444,7 @@
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -453,7 +453,7 @@
 .stat-content span {
   color: #555555;
 
-  font-size: 9px;
+  font-size: 14px;
 }
 
 
@@ -488,7 +488,7 @@
 
   color: #245b96;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -520,7 +520,7 @@
 
   text-decoration: none;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -635,7 +635,7 @@
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -646,7 +646,7 @@
 
   color: #555555;
 
-  font-size: 9px;
+  font-size: 14px;
 }
 
 
@@ -727,7 +727,7 @@
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -738,7 +738,7 @@
 
   color: #555555;
 
-  font-size: 10px;
+  font-size: 14px;
 }
 
 
@@ -751,7 +751,7 @@
 
   border-radius: 20px;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -849,7 +849,7 @@
 
 
   .hero-content p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
 
@@ -967,7 +967,7 @@
   .complaint-status {
     padding: 5px 8px;
 
-    font-size: 9px;
+    font-size: 14px;
   }
 
 }

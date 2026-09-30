@@ -112,7 +112,7 @@
 
   color: #245b96;
 
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -134,7 +134,7 @@
 
   color: #666666;
 
-  font-size: 13px;
+  font-size: 14px;
 }
 
 
@@ -161,7 +161,7 @@
 
   font-family: inherit;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -270,7 +270,7 @@
 
   font-family: inherit;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -317,7 +317,7 @@
 
   color: #245b96;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -338,7 +338,7 @@
 
   color: #666666;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .student-id i,
@@ -422,7 +422,7 @@
 
   color: #777777;
 
-  font-size: 10px;
+  font-size: 14px;
 }
 
 
@@ -449,7 +449,7 @@
 .detail-item span {
   color: #888888;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 500;
 }
@@ -457,7 +457,7 @@
 .detail-item strong {
   color: #111111;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -535,7 +535,7 @@
 
   color: #111111;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -545,7 +545,7 @@
 
   color: #888888;
 
-  font-size: 10px;
+  font-size: 14px;
 }
 
 
@@ -572,7 +572,7 @@
 
   font-family: inherit;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -674,7 +674,7 @@
 
   font-family: inherit;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -730,7 +730,7 @@
   }
 
   .page-heading p {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .edit-btn {
@@ -755,7 +755,7 @@
 
   .student-id,
   .email {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .information-card,

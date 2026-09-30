@@ -73,7 +73,7 @@
 
   color: #245b96;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -101,7 +101,7 @@
 
   color: #555555;
 
-  font-size: 11px;
+  font-size: 14px;
 }
 
 
@@ -227,7 +227,7 @@
 
   color: #777777;
 
-  font-size: 9px;
+  font-size: 14px;
 }
 
 
@@ -307,7 +307,7 @@
 
   color: #245b96;
 
-  font-size: 8px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -372,7 +372,7 @@
 
   font-family: inherit;
 
-  font-size: 9px;
+  font-size: 14px;
 }
 
 
@@ -426,7 +426,7 @@
 
   font-family: inherit;
 
-  font-size: 9px;
+  font-size: 14px;
 
   cursor: pointer;
 }
@@ -458,7 +458,7 @@
 
   text-decoration: none;
 
-  font-size: 9px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -641,7 +641,7 @@
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -663,7 +663,7 @@
 
   border-radius: 10px;
 
-  font-size: 8px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -750,7 +750,7 @@
 
   color: #777777;
 
-  font-size: 8px;
+  font-size: 14px;
 }
 
 
@@ -772,7 +772,7 @@
 
   color: #666666;
 
-  font-size: 9px;
+  font-size: 14px;
 
   line-height: 1.5;
 
@@ -808,7 +808,7 @@
 
   border-radius: 10px;
 
-  font-size: 8px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -867,7 +867,7 @@
 
   text-decoration: none;
 
-  font-size: 9px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -929,7 +929,7 @@
 
   font-family: inherit;
 
-  font-size: 9px;
+  font-size: 14px;
 
   cursor: pointer;
 
@@ -1028,7 +1028,7 @@
 
   .header-content p {
 
-    font-size: 10px;
+    font-size: 14px;
   }
 
 

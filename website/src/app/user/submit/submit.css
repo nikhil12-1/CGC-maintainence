@@ -72,7 +72,7 @@
 
   color: #245b96;
 
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -102,7 +102,7 @@
 
   color: #444444;
 
-  font-size: 12px;
+  font-size: 14px;
 
   line-height: 1.6;
 }
@@ -231,7 +231,7 @@
 
   color: #666666;
 
-  font-size: 11px;
+  font-size: 14px;
 }
 
 
@@ -272,7 +272,7 @@ form {
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -286,7 +286,7 @@ form {
 .form-group label small {
   color: #777777;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 400;
 }
@@ -351,7 +351,7 @@ form {
 
   font-family: inherit;
 
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
@@ -441,7 +441,7 @@ form {
 
   font-family: inherit;
 
-  font-size: 12px;
+  font-size: 14px;
 
   line-height: 1.6;
 
@@ -475,7 +475,7 @@ form {
 
   color: #888888;
 
-  font-size: 9px;
+  font-size: 14px;
 }
 
 
@@ -555,7 +555,7 @@ form {
 .upload-text strong {
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -564,7 +564,7 @@ form {
 .upload-text span {
   color: #777777;
 
-  font-size: 10px;
+  font-size: 14px;
 }
 
 
@@ -604,7 +604,7 @@ form {
 
   color: #000000;
 
-  font-size: 11px;
+  font-size: 14px;
 
   cursor: pointer;
 
@@ -698,7 +698,7 @@ form {
 
   font-family: inherit;
 
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: 600;
 
@@ -900,7 +900,7 @@ form {
 
   color: #ffffff;
 
-  font-size: 10px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -911,7 +911,7 @@ form {
 
   color: #000000;
 
-  font-size: 12px;
+  font-size: 14px;
 
   font-weight: 600;
 }
@@ -922,7 +922,7 @@ form {
 
   color: #666666;
 
-  font-size: 10px;
+  font-size: 14px;
 
   line-height: 1.5;
 }
@@ -961,7 +961,7 @@ form {
 
   color: #444444;
 
-  font-size: 10px;
+  font-size: 14px;
 
   line-height: 1.5;
 }
@@ -1016,7 +1016,7 @@ form {
 
 
   .page-header p {
-    font-size: 11px;
+    font-size: 14px;
   }
 
 
@@ -1106,7 +1106,7 @@ form {
 
 
   .form-title p {
-    font-size: 10px;
+    font-size: 14px;
   }
 
 
