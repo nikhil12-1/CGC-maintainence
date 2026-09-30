@@ -8,5 +8,5 @@ router.post('/login', authLimiter, controller.login);
 router.get('/me', requireAuth, controller.getProfile);
 router.patch('/me', requireAuth, controller.updateProfile);
 router.patch('/password', requireAuth, controller.changePassword);
-router.post('/logout', requireAuth, (req, res) => { res.clearCookie('cgc_token', { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'strict', path: '/' }); res.json({ success: true, message: 'Logged out' }); });
+router.post('/logout', requireAuth, (req, res) => { res.clearCookie('cgc_token', { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', path: '/' }); res.json({ success: true, message: 'Logged out' }); });
 module.exports = router;

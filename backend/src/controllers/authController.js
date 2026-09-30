@@ -24,7 +24,9 @@ const login = async (req, res, next) => {
     res.cookie('cgc_token', result.token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict',
+      // Frontend and API are separate onrender.com sites, so the browser needs
+      // a cross-site cookie for credentialed API requests in production.
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
       path: '/',
       maxAge: Number(process.env.JWT_COOKIE_MAX_AGE_MS) || 86400000
     });
