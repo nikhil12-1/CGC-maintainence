@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../services/api';
 
 @Component({
@@ -11,7 +11,19 @@ import { ApiService } from '../../services/api';
 export class Submit {
   form = { subject: '', category: '', location: '', priority: '', description: '', contactPreference: 'email' };
   file: File | null = null; loading = false; error = ''; success = '';
-  constructor(private api: ApiService, private router: Router, private cdr: ChangeDetectorRef) {}
+  private readonly categoryAliases: Record<string, string> = {
+    electrical: 'electrical', plumbing: 'plumbing', cleaning: 'Cleaning',
+    ac: 'AC / Fan', 'ac / fan': 'AC / Fan', it: 'IT & Network', 'it & network': 'IT & Network',
+    furniture: 'furniture', civil: 'Civil Maintenance', 'civil maintenance': 'Civil Maintenance',
+    laboratory: 'laboratory', hostel: 'hostel', transport: 'transport', other: 'other'
+  };
+
+  constructor(private api: ApiService, private router: Router, private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
+    const requestedCategory = this.route.snapshot.queryParamMap.get('category')?.trim().toLowerCase();
+    if (requestedCategory && this.categoryAliases[requestedCategory]) {
+      this.form.category = this.categoryAliases[requestedCategory];
+    }
+  }
   fileSelected(event: Event) { this.file = (event.target as HTMLInputElement).files?.[0] || null; }
   submit() {
     this.error = ''; this.success = ''; this.loading = true;
